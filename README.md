@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/680265586.svg)](https://zenodo.org/badge/latestdoi/680265586)
 # In house scripts used in the paper "Multi-Omics Integration Can be Used to Rescue Metabolic Information for Some of the Dark Region of the *Pseudomonas putida* Proteome"
 
 ## Within species Guilt by Association model
