@@ -1,0 +1,5 @@
+spectrast -cN SLT01_coEx-mouseFiltered -cm DECOY_ SLT01_coEx-mouseFiltered.msp
+spectrast -cN SLT01_coEx-pputConsensus -cIHCD -cAC -cu -c_DIS -c_BDU -c_BDT -cD Pseudomonas_putida_KT2440_110.faa  interact.iproph.pep.xml 
+spectrast -cN SLT01_coEx-pputProcessed -cAC -cD Pseudomonas_putida_KT2440_110.faa -cu -c_DIS -c_BDU -c_BDT SLT01_coEx-pputConsensus.splib
+spectrast -cN SLT01_coEx-mouseProcessed -cAC -c_DIS! -c_BDU -c_BDT SLT01_coEx-mouseFiltered.splib
+spectrast -cN SLT01_coEx-concat -cJU SLT01_coEx-pputProcessed.splib SLTo1_coEx-mouseProcessed.splib
