@@ -17,7 +17,7 @@ import dill
 os.chdir('C:/Users/Administrator/Documents/Hettich/SLT01')
 
 #################################################
-#expression correlation given by a modified l1/2 norm of the set of pearson correlation coefficents of protein expression z scores across three proteomics datasets
+#expression correlation given by the mean of the set of pearson correlation coefficents of protein expression z scores across three proteomics datasets
 #and jaccard similarity of binary presence/absence vector across conditions
 
 experiments = ['PXD013011', 'PXD016028', 'PXD016114']
