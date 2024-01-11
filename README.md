@@ -14,9 +14,9 @@ the scripts in this section are not dependent on the results of any other script
 This script requires the NIST .msp file and Pseudomonas\_putida\_KT2440\_110.faa.
 
 **SLT01_spectraST-commands.txt:** The specific commands used when processing spectral libraries with SpectraST
-These commnands are run on the output of the philosopher pipeline and the filtered NIST mouse spectral library from above. 
+These commands are run on the output of the philosopher pipeline and the filtered NIST mouse spectral library from above. 
 
-**SLT01_coEx-annsoloToFlashLFQ.py:** Processes the ANNSoLo output, does FDR control, and filters implausable PTMs then formats the output for quantificaiton by FlashLFQ. The script will run FlashLFQ in the smithchemwisc/flashlfq:1.0.3 docker container as a subprocess.
+**SLT01_coEx-annsoloToFlashLFQ.py:** Processes the ANNSoLo output, does FDR control, and filters implausable PTMs then formats the output for quantification by FlashLFQ. The script will run FlashLFQ in the smithchemwisc/flashlfq:1.0.3 docker container as a subprocess.
 This requires a concatenated target + decoy spectral library file, the .mztab outputs of ANN-SoLo, valid_defects.txt, and names.txt 
 
 ### evolutionary_correlation
@@ -29,7 +29,7 @@ This script requires a .faa file.
 This script requires the MSA files from MAFFT and a .faa file.
 
 **SLT01_corrEvoPargenesInput.py:** Cleans and formats the MSAs for Pargenes
-This script reqires the processed MSAs generated above.
+This script requires the processed MSAs generated above.
 
 **SLT01_corrEvoFixedTopo-scheduler.py:** Run RAxML-ng on all orthogroups with the species tree as a topological constraint
 This script requires the output directory from running Pargenes with the optional ASTRAL call.
@@ -44,7 +44,7 @@ This script requires a directory of processed newick files from SLT01_corrEvoTre
 the scripts in this section are listed in the order in which they were run. Note that this section is for the within-species structural similarity analysis that feeds into the guilt-by-association model not the between-species structural similarity analysis.
 
 **SLT01_trimAF.py:** Trims low confidence regions at the termini of proteins as a preprocessing step for alignment
-This script requires the proteins.dill file from SLT01_baselineDataSetup.py in the GBA integration section and a directory of .pdb files from the alphafold predicted protein structure database
+This script requires the proteins.dill file from SLT01_baselineDataSetup.py in the GBA integration section and a directory of .pdb files from the Alphafold predicted protein structure database
 
 **SLT01_TMalignScheduler.py:** Runs TM-align on all *P. putida* proteins
 This script requires the directory of cleaned .pdb files from SLT01_trimAF.py
@@ -52,7 +52,7 @@ This script requires the directory of cleaned .pdb files from SLT01_trimAF.py
 ### GBA_integration
 The scripts in this section are dependent on the results of the previous sections. They are listed in the order in which they were run.
 
-**names\_seq\_input.csv:** Data from uniprot
+**names\_seq\_input.csv:** Data from Uniprot
 
 **test_set.txt:** The proteins held out as a test set for the prediction model. Created by SLT01_termCentric-filterSimilarities.py
 
@@ -88,7 +88,7 @@ This script requires the output of SLT01_RUPEEwebdriver.py
 This script requires the output of SLT01_RUPEEmapNamesAndcollectInputData.py and Pseudomonas\_putida\_KT2440\_110.faa
 
 **SLT01_RUPEEsemisupervisedInput.py:** Collects the input information and formats it for the term transfer model
-This script requires the output of SLT01\_RUPEEpairwiseAlignments.py and all ouputs of SLT01\_baselineDataSetup.py
+This script requires the output of SLT01\_RUPEEpairwiseAlignments.py and all outputs of SLT01\_baselineDataSetup.py
 
 **SLT01_RUPEEsemisupervisedModel.py:** Fits the semi-supervised random forest model
 This script requires the output of SLT01\_RUPEEsemisupervisedInput.py
@@ -114,7 +114,7 @@ This script requires the outputs of SLT01\_baselineDataSetup.py, SLT01\_termCent
 ### interpro_analysis
 The scripts in this section are listed in the order in which they were run.
 
-**SLT01_InterproEnrichmentModel.stan:** The statistical model for assessing interpro term enrichments among PUFs. Used for figure S3.
+**SLT01_InterproEnrichmentModel.stan:** The statistical model for assessing Interpro term enrichments among PUFs. Used for figure S3.
 This script is run by SLT01_InterproEnrichmentModel-driver.py
 
 **SLT01_InterproEnrichmentModel-driver.py:** Formats the input data and runs SLT01_InterproEnrichmentModel.stan
