@@ -116,7 +116,7 @@ with open('SLT01_seqSimilar/SLT01_seqSimilar-diamond.txt','r') as dmnd:
             edge.extend(re.findall(r'PP_\d{4}', line))
             # #e-value and bit score
             edge.append(re.findall(r'\d+\.[\de+-]+',line)[-1])
-            #calculates the shannon information content from the evalue so that the numbers are easier for the BART model to work with
+            #calculates the shannon information content from the evalue so that the numbers are easier for the random forest model to work with
             #some e-values are 0 due to float inprecision which would give infinity bits, these are instead given the max observed information content
             # edge[2] = str(-math.log2(float(edge[2]))) if not float(float(edge[2])) == 0 else '1044' #this was the max value observed
             edgelist.write('\t'.join(edge) + '\n')
